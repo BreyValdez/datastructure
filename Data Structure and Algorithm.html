@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>RTU-CEIT Library System_1st Year Book</title>
+    <meta name="description" content="RTU-Library-Login">
+    <meta name="keywords" content="RTU-Library">
+    <meta name="creator" content="Reymar Blangquisco">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px yellow; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #003399; 
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: yellow; 
+}
+body{
+ background-color: #fffaf0;
+}
+
+#searchbar{
+  margin-top: 5px;
+  margin-left: 5%;
+  border-radius: 10px;
+  border:2px solid #003399;
+  padding:10px 8px;
+  font-size: 18px;
+}
+
+input[type=text] {
+  width: 80%;
+}
+
+.list{
+  overflow: auto;
+  font-size: 1.5em;
+  padding: 0;
+
+}
+.list a{
+  border: 2px solid #003399;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  padding: 16px;
+  font-size: 0.8em;
+  text-align: justify-all;
+}
+.list a:hover{
+  color: #000;
+  background-color: yellow;
+}
+.list li{
+  list-style-type: none;
+}
+
+.books{
+display: list-item; 
+text-decoration: none;
+}
+
+.title{
+text-align: center;
+}
+
+.title h1{
+  font-size: 30px;
+}
+
+.navbar ul{
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.navbar li{
+  display: inline-block;
+}
+</style>
+<body>
+      
+    <!-- title tag -->
+    <a href="Home_cover.html" target="content"><button style="font-size: 20px; background-color: yellow; border-color: yellow;">Home</button></a>
+    <h1 class="title">Data Structures and Algorithm</h1>
+    <!-- input tag -->
+    <input id="searchbar" onkeyup="search_animal()" type="text"
+        name="search" placeholder="Search books..">
+      
+    <!-- ordered list -->
+    <ul class="list">
+        <li class="books"><a href="Books/Module 01- DATA STRUCTURE I.pdf#toolbar=0" target="content">Module 01- DATA STRUCTURE I</a></li>
+        <li class="books"><a href="Books/Module 02- DATA STRUCTURE II.pdf#toolbar=0" target="content">Module 02- DATA STRUCTURE II</a></li>
+        <li class="books"><a href="Books/Module 03.1- TREE BASED DSA I.pdf#toolbar=0" target="content">Module 03.1- TREE BASED DSA I</a></li>
+        <li class="books"><a href="Books/Module 03.2- TREE BASED DATA STRUCTURE TECHNIQUE I.pdf#toolbar=0" target="content">Module 03.2- TREE BASED DATA STRUCTURE TECHNIQUE I</a></li>
+        <li class="books"><a href="Books/Module 03.3 TREE BASED DSA I.pdf#toolbar=0" target="content">Module 03.3 TREE BASED DSA I</a></li>
+        <li class="books"><a href="Books/Module 04- TREE BASED DSA II.pdf#toolbar=0" target="content">Module 04- TREE BASED DSA II</a></li>
+        <li class="books"><a href="Books/Module 05.1- GRAPH BASED DSA.pdf#toolbar=0" target="content">Module 05.1- GRAPH BASED DSA</a></li>
+        <li class="books"><a href="Books/Module 05.2- GRAPH BASED DSA.pdf#toolbar=0" target="content">Module 05.2- GRAPH BASED DSA</a></li>
+        <li class="books"><a href="Books/Module 05.3- GRAPH BASED DSA.pdf#toolbar=0" target="content">Module 05.3- GRAPH BASED DSA</a></li>
+        <li class="books"><a href="Books/Module 06- SORTING AND SEARCHING ALGORITHM.pdf#toolbar=0" target="content">Module 06- SORTING AND SEARCHING ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.1- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.1- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.2- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.2- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.3- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.3- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.4- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.4- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.5- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.5- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 07.6- GREEDY ALGORITHM.pdf#toolbar=0" target="content">Module 07.6- GREEDY ALGORITHM</a></li>
+        <li class="books"><a href="Books/Module 08.1- DYNAMIC PROGRAMMING.pdf#toolbar=0" target="content">Module 08.1- DYNAMIC PROGRAMMING</a></li>
+        <li class="books"><a href="Books/Module 08.2- DYNAMIC PROGRAMMING.pdf#toolbar=0" target="content">Module 08.2- DYNAMIC PROGRAMMING</a></li>
+        <li class="books"><a href="Books/Learnings.pdf#toolbar=0" target="content">Learning in Every Modules</a></li>
+    </ul>
+    </ul>
+      
+    <!-- linking javascript -->
+    <script>
+      // JavaScript code
+function search_animal() {
+  let input = document.getElementById('searchbar').value
+  input=input.toLowerCase();
+  let x = document.getElementsByClassName('books');
+  
+  for (i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].style.display="none";
+    }
+    else {
+      x[i].style.display="list-item";       
+    }
+  }
+}
+
+    </script>
+</body>
